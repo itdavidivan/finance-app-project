@@ -1,0 +1,535 @@
+@import url("https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap");
+/* 
+    CSS RESET
+*/
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  font-size: 1.6rem;
+
+  padding-bottom: 3.2rem;
+  font-family: "Inter", sans-serif;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+    9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+html {
+  /* 10px / 16px = 0.625 = 62.5% */
+  font-size: 62.5%;
+}
+/* // RESPONSIVE CONTAINER */
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+/* --- 01 TYPOGRAPHY SYSTEM
+   
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+--- 02 WHITESPACE
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+*/
+
+/* MYCODE */
+
+.other-container {
+  max-width: 160rem;
+  margin: 0 auto;
+}
+.container {
+  max-width: 130rem;
+  margin: 0 auto;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-list {
+  display: flex;
+  gap: 3.2rem;
+}
+.nav-list a,
+.sign button {
+  color: #b1b1b1;
+}
+ul li a {
+  position: relative;
+}
+ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 0;
+  height: 3px;
+  background-color: #b1b1b1;
+  transition: width 0.4s ease;
+}
+ul li a:hover::after {
+  width: 100%;
+}
+
+.sign {
+  display: flex;
+  gap: 3.2rem;
+}
+.sign button,
+.nav-logo {
+  transition: transform 0.8s ease;
+}
+.sign button:hover,
+.nav-logo:hover {
+  transform: scale(1.2);
+}
+.background {
+  padding-top: 3.2rem;
+  background-color: #101010;
+  background-image: url("./photos/background.png");
+}
+
+.get-demo {
+  background-color: #72e484;
+  border-radius: 15px;
+  padding: 10px;
+  color: #101010 !important;
+}
+
+.left {
+  display: grid;
+  color: white;
+  max-width: 70rem;
+  align-items: start;
+  align-content: center;
+  gap: 4.2rem;
+}
+.under-hero {
+  display: grid;
+  gap: 5.3rem;
+}
+.store {
+  display: grid;
+  gap: 3.3rem;
+}
+.store-buttons {
+  display: flex;
+  gap: 2.4rem;
+}
+.try {
+  width: 500px;
+  height: 500px;
+  border: 1px solid rgb(255, 0, 0);
+  margin: 400px;
+  perspective: 410px;
+  text-align: center;
+}
+h1 {
+  font-size: 6rem;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+}
+.right {
+  position: relative;
+  perspective: 310px;
+}
+.mobile {
+  transition: all 1s ease;
+  filter: blur(2px);
+  width: 100%;
+  height: 100%;
+  transform: rotateY(-10deg);
+}
+.mobile:hover {
+  transform: rotateY(0);
+  filter: blur(0px);
+}
+.prices {
+  position: absolute;
+  top: 68%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 1s ease;
+  width: 35rem;
+  max-width: none;
+  filter: blur(2px);
+}
+.prices:hover {
+  transform: translate(-30%, -30%);
+  filter: blur(0px);
+}
+.transactions {
+  background: #f8f8f8;
+
+  padding: 9.6rem 0;
+}
+.transaction-h2 {
+  font-size: 3.8rem;
+  color: #090033;
+}
+.transaction-text {
+  color: #9a9797;
+  font-size: 2.2rem;
+  width: 70rem;
+}
+.transactions-boxes {
+  display: flex;
+  gap: 4.2rem;
+}
+.box {
+  display: grid;
+  width: 30rem;
+  gap: 3rem;
+  border-radius: 1.5rem;
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 3.5rem;
+}
+.box-text {
+  color: #9a9797;
+}
+.active {
+  background-color: #72e484;
+  font-weight: bold;
+  color: #030126 !important;
+}
+
+.transactions-container {
+  display: grid;
+  justify-content: center;
+  margin-bottom: 8rem;
+  gap: 4.2rem;
+  text-align: center;
+}
+
+/* @keyframes mojeAnimacia {
+  0% {
+    transform: rotateY(75deg); 
+    opacity: 1; 
+  }
+  50% {
+    transform: rotateY(0deg);
+    opacity: 0.5; 
+  }
+  100% {
+    transform: rotateY(75deg); 
+    opacity: 1; 
+  }
+} */
+/* animation: mojeAnimacia 1.2s ease-in-out; */
+.payments {
+  display: grid;
+  margin: 12rem;
+  gap: 18rem;
+}
+.up-side {
+  display: flex;
+  gap: 10rem;
+  justify-content: center;
+}
+.left-up-side {
+  display: grid;
+  gap: 300px;
+  position: relative;
+}
+.bank-accounts {
+  position: absolute;
+  margin: 4rem;
+}
+.bank-accounts h3 {
+  font-weight: bold;
+  font-size: 3rem;
+  margin-bottom: 2.4rem;
+}
+.bank-accounts p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  max-width: 40rem;
+  margin-bottom: 3.6rem;
+}
+.learn-more {
+  display: flex;
+  gap: 2rem;
+}
+.balance {
+  margin-left: 30rem;
+
+  text-align: center;
+  font-size: 1.4rem;
+  color: #9a9797;
+}
+.amount {
+  font-weight: bold;
+  font-size: 1.6rem;
+  color: black;
+}
+.wave {
+  position: absolute;
+  bottom: -10rem;
+  margin-bottom: 7rem;
+  width: 58.8rem;
+  left: -4rem;
+}
+.right-up-side {
+  display: grid;
+
+  align-items: center;
+  text-align: center;
+  justify-items: center;
+}
+.right-up-side h2 {
+  color: #090335;
+  font-size: 3.6rem;
+  font-weight: 700;
+}
+.right-up-side p {
+  color: #9a9797;
+  font-size: 2rem;
+  max-width: 43rem;
+}
+
+.inside-button {
+  display: flex;
+  background-color: #72e484;
+  border-radius: 1.6rem;
+  justify-content: space-around;
+  width: 20rem;
+  padding: 1rem;
+  gap: 2rem;
+  height: fit-content;
+}
+.down-side {
+  display: flex;
+  justify-content: space-between;
+}
+.left-down-side {
+  display: grid;
+  gap: 7.2rem;
+}
+.left-down-side h2 {
+  font-weight: 700;
+  font-size: 3.8rem;
+  max-width: 30rem;
+}
+.globality-integrate {
+  display: flex;
+  justify-content: space-between;
+}
+.globality,
+.integrate {
+  display: grid;
+  gap: 3.2rem;
+  width: 24rem;
+  color: #222222;
+}
+.globality h3,
+.integrate h3 {
+  font-weight: 600;
+  font-size: 2.6rem;
+}
+.globality p,
+.integrate p {
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: #9a9797;
+}
+.right-down-side {
+  display: flex;
+  gap: 4rem;
+  box-shadow: 0px 4px 50px 0px #0000001c;
+  padding: 3rem;
+
+  border-radius: 1rem;
+}
+.right-down-side .first-part {
+  width: 30rem;
+  display: grid;
+  gap: 1.6rem;
+  color: #090434;
+  padding: 3rem;
+}
+.first-part h3 {
+  font-weight: 600;
+  font-size: 3rem;
+}
+.appstore {
+  background-color: #72e484;
+  height: 44rem;
+  align-items: center;
+  display: grid;
+  justify-content: center;
+}
+.app-google {
+  display: grid;
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+
+  text-align: center;
+}
+.app-google h2 {
+  font-weight: 600;
+  font-size: 4rem;
+  width: 75rem;
+}
+.app-google p {
+  width: 45rem;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+footer {
+  background-color: #101010;
+  padding: 8rem;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+.footer-left {
+  display: grid;
+  gap: 5rem;
+}
+.social-media {
+  display: flex;
+  gap: 1rem;
+}
+.footer-right a {
+  color: #9a9797;
+}
+.footer-right {
+  display: flex;
+  gap: 5rem;
+}
+.footer-right-1 {
+  display: grid;
+}
+.footer-right-2 {
+  display: grid;
+}
+.footer-right-3 {
+  display: grid;
+}
+.copyright {
+  background-color: #101010;
+  width: 100%;
+  padding: 2rem;
+  color: #505050;
+  border-top: 1px solid white;
+  text-align: center;
+  font-family: "Sour Gummy", serif;
+  font-size: 2.4rem;
+}
